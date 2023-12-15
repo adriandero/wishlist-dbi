@@ -1,0 +1,220 @@
+db.wishlist.deleteMany({
+  "child.firstname": 'Zachariah',
+  "child.lastname": 'Downer',
+  year: 2023
+});
+
+db.wishlist.updateMany(
+  {
+    "child.firstname": 'Zachariah',
+    "child.lastname": 'Downer',
+    year: 2023
+  },
+  {
+    $set: {
+      "items.$[elem].currentprice": 100.00
+    }
+  },
+  {
+    arrayFilters: [{"elem.name": "Steamers White"}]
+  }
+);
+
+## First find
+db.wishlist.find({});
+
+## Second find
+db.wishlist.find({
+  "child.firstname": "Ninth",
+  "child.lastname": "Child"
+});
+
+## Third find
+db.wishlist.aggregate([
+  {
+    $unwind: "$items"
+  },
+  {
+    $group: {
+      _id: {
+        year: "$year",
+        firstname: "$child.firstname",
+        lastname: "$child.lastname"
+      },
+      items: {
+        $push: {
+          id: "$items.id",
+          name: "$items.name",
+          currentprice: "$items.currentprice"
+        }
+      },
+      itemCount: { $sum: 1 }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      year: "$_id.year",
+      child: {
+        $concat: ["$_id.firstname", " ", "$_id.lastname"]
+      },
+      itemCount: 1
+    }
+  }
+]);
+
+## Forth Querie
+db.wishlist.aggregate([
+  {
+    $unwind: "$items"
+  },
+  {
+    $group: {
+      _id: {
+        year: "$year",
+        firstname: "$child.firstname",
+        lastname: "$child.lastname"
+      },
+      items: {
+        $push: {
+          id: "$items.id",
+          name: "$items.name",
+          currentprice: "$items.currentprice"
+        }
+      },
+      avgItemPrice: { $avg: "$items.currentprice" }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      year: "$_id.year",
+      child: {
+        $concat: ["$_id.firstname", " ", "$_id.lastname"]
+      },
+      avgItemPrice: 1
+    }
+  }
+]);
+
+
+## With ref
+db.wishlist.deleteMany({
+  "child": 1,
+  "year": 2000
+});
+
+db.wishlist.updateMany({
+  "child": 1,
+  "year": 2000
+  },
+  {
+    $set: {
+      "items.$[elem].currentprice": 100.00
+    }
+  },
+  {
+    arrayFilters: [{"elem.name": "Steamers White"}]
+  }
+);
+
+## First find
+db.wishlist.find({});
+
+## Second find
+db.child.find({
+  "child.firstname": "Zachariah",
+  "child.lastname": "Downer"
+});
+
+## Third find
+db.wishlist.createIndex({ "child.id": 1 });
+db.wishlist.aggregate([
+  {
+    $unwind: "$items"
+  },
+  {
+    $lookup: {
+      from: "child",
+      localField: "child",
+      foreignField: "id",
+      as: "childInfo"
+    }
+  },
+  {
+    $unwind: "$childInfo"
+  },
+  {
+    $group: {
+      _id: {
+        year: "$year",
+        firstname: "$childInfo.firstname",
+        lastname: "$childInfo.lastname"
+      },
+      items: {
+        $push: {
+          id: "$items.id",
+          name: "$items.name",
+          currentprice: "$items.currentprice"
+        }
+      },
+      itemCount: { $sum: 1 }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      year: "$_id.year",
+      child: {
+        $concat: ["$_id.firstname", " ", "$_id.lastname"]
+      },
+      itemCount: 1
+    }
+  }
+]);
+
+
+## Forth Querie
+db.wishlist.aggregate([
+  {
+    $unwind: "$items"
+  },
+  {
+    $lookup: {
+      from: "child",
+      localField: "child",
+      foreignField: "id",
+      as: "childInfo"
+    }
+  },
+  {
+    $unwind: "$childInfo"
+  },
+  {
+    $group: {
+      _id: {
+        year: "$year",
+        firstname: "$childInfo.firstname",
+        lastname: "$childInfo.lastname"
+      },
+      items: {
+        $push: {
+          id: "$items.id",
+          name: "$items.name",
+          currentprice: "$items.currentprice"
+        }
+      },
+      avgItemPrice: { $avg: "$items.currentprice" }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      year: "$_id.year",
+      child: {
+        $concat: ["$_id.firstname", " ", "$_id.lastname"]
+      },
+      avgItemPrice: 1
+    }
+  }
+]);

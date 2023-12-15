@@ -1,0 +1,549 @@
+for (let i = 0; i < 100; i++) {
+  const currentYear = NumberInt(2000 + i);
+  db.wishlist.insertMany([
+  {
+    "year": currentYear,
+    "child": {
+      "id": 1,
+      "firstname": 'Zachariah',
+      "lastname": 'Downer',
+      "age": 12
+    },
+    "items": [
+      {
+        "id": 1,
+        "name": 'Steamers White',
+        "currentprice": 339.99
+      },
+      {
+        "id": 2,
+        "name": 'Toy Car',
+        "currentprice": 19.99
+      },
+      {
+        "id": 3,
+        "name": 'Book Set',
+        "currentprice": 49.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": {
+      "id": 2,
+      "firstname": 'Another',
+      "lastname": 'Child',
+      "age": 10
+    },
+    "items": [
+      {
+        "id": 4,
+        "name": 'Board Game',
+        "currentprice": 29.99
+      },
+      {
+        "id": 5,
+        "name": 'Building Blocks',
+        "currentprice": 15.99
+      },
+      {
+        "id": 6,
+        "name": 'Art Supplies',
+        "currentprice": 39.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": {
+      "id": 3,
+      "firstname": 'Another',
+      "lastname": 'Child',
+      "age": 8
+    },
+    "items": [
+      {
+        "id": 7,
+        "name": 'Puzzle',
+        "currentprice": 24.99
+      },
+      {
+        "id": 8,
+        "name": 'Remote Control Car',
+        "currentprice": 59.99
+      },
+      {
+        "id": 9,
+        "name": 'Drawing Tablet',
+        "currentprice": 89.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": {
+      "id": 4,
+      "firstname": 'Yet',
+      "lastname": 'AnotherChild',
+      "age": 7
+    },
+    "items": [
+      {
+        "id": 10,
+        "name": 'Doll Set',
+        "currentprice": 19.99
+      },
+      {
+        "id": 11,
+        "name": 'Video Game',
+        "currentprice": 49.99
+      },
+      {
+        "id": 12,
+        "name": 'Sports Equipment',
+        "currentprice": 34.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": {
+      "id": 5,
+      "firstname": 'Fifth',
+      "lastname": 'Child',
+      "age": 6
+    },
+    "items": [
+      {
+        "id": 13,s
+        "name": 'Educational Toy',
+        "currentprice": 29.99
+      },
+      {
+        "id": 14,
+        "name": 'Bicycle',
+        "currentprice": 99.99
+      },
+      {
+        "id": 15,
+        "name": 'Robot Kit',
+        "currentprice": 79.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": {
+      "id": 6,
+      "firstname": 'Sixth',
+      "lastname": 'Child',
+      "age": 11
+    },
+    "items": [
+      {
+        "id": 16,
+        "name": 'Lego Set',
+        "currentprice": 44.99
+      },
+      {
+        "id": 17,
+        "name": 'Remote Control Helicopter',
+        "currentprice": 69.99
+      },
+      {
+        "id": 18,
+        "name": 'Artificial Intelligence Kit',
+        "currentprice": 129.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": {
+      "id": 7,
+      "firstname": 'Seventh',
+      "lastname": 'Child',
+      "age": 9
+    },
+    "items": [
+      {
+        "id": 19,
+        "name": 'Board Puzzle',
+        "currentprice": 21.99
+      },
+      {
+        "id": 20,
+        "name": 'Action Figures',
+        "currentprice": 39.99
+      },
+      {
+        "id": 21,
+        "name": 'Science Experiment Kit',
+        "currentprice": 59.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": {
+      "id": 8,
+      "firstname": 'Eighth',
+      "lastname": 'Child',
+      "age": 13
+    },
+    "items": [
+      {
+        "id": 22,
+        "name": 'Remote Control Boat',
+        "currentprice": 49.99
+      },
+      {
+        "id": 23,
+        "name": 'Virtual Reality Headset',
+        "currentprice": 89.99
+      },
+      {
+        "id": 24,
+        "name": 'Art Supplies Kit',
+        "currentprice": 29.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": {
+      "id": 9,
+      "firstname": 'Ninth',
+      "lastname": 'Child',
+      "age": 8
+    },
+    "items": [
+      {
+        "id": 25,
+        "name": 'Interactive Learning Tablet',
+        "currentprice": 59.99
+      },
+      {
+        "id": 26,
+        "name": 'Outdoor Playset',
+        "currentprice": 199.99
+      },
+      {
+        "id": 27,
+        "name": 'Sports Gear Set',
+        "currentprice": 34.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": {
+      "id": 10,
+      "firstname": 'Tenth',
+      "lastname": 'Child',
+      "age": 10
+    },
+    "items": [
+      {
+        "id": 28,
+        "name": 'Educational Board Game',
+        "currentprice": 27.99
+      },
+      {
+        "id": 29,
+        "name": 'Remote Control Plane',
+        "currentprice": 79.99
+      },
+      {
+        "id": 30,
+        "name": 'DIY Craft Kit',
+        "currentprice": 19.99
+      }
+    ]
+  }
+]);
+}
+
+
+
+## With Referencing
+db.child.insertMany([
+  {
+    "id": 1,
+    "firstname": 'Zachariah',
+    "lastname": 'Downer',
+    "age": 12
+  },
+  {
+    "id": 2,
+    "firstname": 'Olivia',
+    "lastname": 'Smith',
+    "age": 8
+  },
+  {
+    "id": 3,
+    "firstname": 'Ethan',
+    "lastname": 'Johnson',
+    "age": 10
+  },
+  {
+    "id": 4,
+    "firstname": 'Ava',
+    "lastname": 'Brown',
+    "age": 6
+  },
+  {
+    "id": 5,
+    "firstname": 'Mason',
+    "lastname": 'Miller',
+    "age": 9
+  },
+  {
+    "id": 6,
+    "firstname": 'Sophia',
+    "lastname": 'Davis',
+    "age": 7
+  },
+  {
+    "id": 7,
+    "firstname": 'Logan',
+    "lastname": 'Wilson',
+    "age": 11
+  },
+  {
+    "id": 8,
+    "firstname": 'Isabella',
+    "lastname": 'Moore',
+    "age": 5
+  },
+  {
+    "id": 9,
+    "firstname": 'Jackson',
+    "lastname": 'Taylor',
+    "age": 8
+  },
+  {
+    "id": 10,
+    "firstname": 'Aiden',
+    "lastname": 'Anderson',
+    "age": 7
+  }
+]);
+
+for (let i = 0; i < 100; i++) {
+  const currentYear = NumberInt(2000 + i);
+  const childId = i % 10 + 1;
+
+  db.wishlist.insertMany([
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 1,
+        "name": 'Steamers White',
+        "currentprice": 339.99
+      },
+      {
+        "id": 2,
+        "name": 'Toy Car',
+        "currentprice": 19.99
+      },
+      {
+        "id": 3,
+        "name": 'Book Set',
+        "currentprice": 49.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 4,
+        "name": 'Board Game',
+        "currentprice": 29.99
+      },
+      {
+        "id": 5,
+        "name": 'Building Blocks',
+        "currentprice": 15.99
+      },
+      {
+        "id": 6,
+        "name": 'Art Supplies',
+        "currentprice": 39.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 7,
+        "name": 'Puzzle',
+        "currentprice": 24.99
+      },
+      {
+        "id": 8,
+        "name": 'Remote Control Car',
+        "currentprice": 59.99
+      },
+      {
+        "id": 9,
+        "name": 'Drawing Tablet',
+        "currentprice": 89.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 10,
+        "name": 'Doll Set',
+        "currentprice": 19.99
+      },
+      {
+        "id": 11,
+        "name": 'Video Game',
+        "currentprice": 49.99
+      },
+      {
+        "id": 12,
+        "name": 'Sports Equipment',
+        "currentprice": 34.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 13,
+        "name": 'Educational Toy',
+        "currentprice": 29.99
+      },
+      {
+        "id": 14,
+        "name": 'Bicycle',
+        "currentprice": 99.99
+      },
+      {
+        "id": 15,
+        "name": 'Robot Kit',
+        "currentprice": 79.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 16,
+        "name": 'Lego Set',
+        "currentprice": 44.99
+      },
+      {
+        "id": 17,
+        "name": 'Remote Control Helicopter',
+        "currentprice": 69.99
+      },
+      {
+        "id": 18,
+        "name": 'Artificial Intelligence Kit',
+        "currentprice": 129.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 19,
+        "name": 'Board Puzzle',
+        "currentprice": 21.99
+      },
+      {
+        "id": 20,
+        "name": 'Action Figures',
+        "currentprice": 39.99
+      },
+      {
+        "id": 21,
+        "name": 'Science Experiment Kit',
+        "currentprice": 59.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 22,
+        "name": 'Remote Control Boat',
+        "currentprice": 49.99
+      },
+      {
+        "id": 23,
+        "name": 'Virtual Reality Headset',
+        "currentprice": 89.99
+      },
+      {
+        "id": 24,
+        "name": 'Art Supplies Kit',
+        "currentprice": 29.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 25,
+        "name": 'Interactive Learning Tablet',
+        "currentprice": 59.99
+      },
+      {
+        "id": 26,
+        "name": 'Outdoor Playset',
+        "currentprice": 199.99
+      },
+      {
+        "id": 27,
+        "name": 'Sports Gear Set',
+        "currentprice": 34.99
+      }
+    ]
+  },
+  {
+    "year": currentYear,
+    "child": childId,
+    "items": [
+      {
+        "id": 28,
+        "name": 'Educational Board Game',
+        "currentprice": 27.99
+      },
+      {
+        "id": 29,
+        "name": 'Remote Control Plane',
+        "currentprice": 79.99
+      },
+      {
+        "id": 30,
+        "name": 'DIY Craft Kit',
+        "currentprice": 19.99
+      }
+    ]
+  }
+]);
+}
