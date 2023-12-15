@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
+import Wishlist from "./components/WishlistList/WishlistList.js";
+import ItemList from "./components/WishlistList/ItemList.js";
+
+import { Outlet, Link } from "react-router-dom";
+
+const NoPage = () => {
+  return <h1>404</h1>;
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Wishlist />} />
+        <Route path="" element={<Wishlist />} />
+        <Route path=":id" element={<ItemList />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
