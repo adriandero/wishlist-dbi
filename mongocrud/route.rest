@@ -1,0 +1,65 @@
+
+GET http://localhost:8000/api/getAll
+
+###
+GET http://localhost:8000/api/657cafdf8b1d8b1aadb50b34
+
+### 
+
+POST http://localhost:8000/api/post
+Content-Type: application/json
+
+{
+    "year": 2023,
+    "child": {
+      "firstname": "Adrian",
+      "lastname": "De Ro",
+      "age": 18
+    },
+    "items": [
+      {
+        "name": "Steamers White",
+        "currentprice": 339.99
+      },
+      {
+        "name": "Toy Car",
+        "currentprice": 19.99
+      },
+      {
+        "name": "Book Set",
+        "currentprice": 49.99
+      }
+    ]
+  }
+
+### 
+
+
+PATCH http://localhost:8000/api/patch/657cafdf8b1d8b1aadb50b34
+Content-Type: application/json
+
+{
+    "year": 20213,
+    "child": {
+      "firstname": "Julian",
+      "lastname": "Meyringer",
+      "age": 18
+    },
+    "items": [
+      {
+        "name": "Data White",
+        "currentprice": 119.99
+      },
+      {
+        "name": "Toy Horse",
+        "currentprice": 192.99
+      },
+      {
+        "name": "Barbie",
+        "currentprice": 49.20
+      }
+    ]
+  }
+###
+
+DELETE http://localhost:8000/api/657cafdf8b1d8b1aadb50b34
