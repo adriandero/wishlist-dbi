@@ -25,12 +25,15 @@ class WishlistList extends React.Component {
     super(props);
     this.state = {
       data: [],
+      filter: "",
+      filteredItems: [],
     };
   }
 
   componentDidMount() {
     getAllWishlists().then((result) => {
       this.setState({ data: result });
+      this.setState({ filteredItems: result });
     });
   }
 
@@ -39,13 +42,33 @@ class WishlistList extends React.Component {
     window.location.reload();
   };
 
+  handleFilterChange = (val) => {
+    const value = val.toLowerCase();
+    this.setState({ filter: value });
+
+    const filtered = this.state.data.filter((fItem) =>
+      fItem.child.firstname.toLowerCase().includes(val)
+    );
+
+    this.setState({ filteredItems: filtered });
+  };
+
   render() {
     const data = this.state.data;
+    const { filter, filteredItems } = this.state;
 
     return (
       <React.Fragment>
         <TableContainer component={Paper}>
           <PostDialog />
+          <TextField
+            label="Filter by Name"
+            variant="outlined"
+            value={filter}
+            onChange={(e) => this.handleFilterChange(e.target.value)}
+            style={{ margin: "16px" }}
+          />
+
           <Table>
             <TableHead>
               <TableRow>
@@ -55,8 +78,8 @@ class WishlistList extends React.Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {data ? (
-                data.map((item) => (
+              {filteredItems ? (
+                filteredItems.map((item) => (
                   <TableRow key={item._id}>
                     <TableCell>
                       <Link
